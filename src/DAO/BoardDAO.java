@@ -20,6 +20,8 @@ public class BoardDAO {
 	DataSource ds;
 	
 	
+	
+	
 	public BoardDAO() {
 		try {
 			Context ctx = new InitialContext();

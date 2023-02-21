@@ -6,7 +6,7 @@ import java.sql.Date;
 //입력한 회원정보를 DB에 INSERT추가 하기 전 임시로 저장할 변수가 있는 VO클래스
 public class MemberVo {
 	
-	private String id,pass,name;
+	private String id,pass,name, nickname;
 	private Date reg_date;
 	private int age;
 	private String gender,address,email,tel,hp;

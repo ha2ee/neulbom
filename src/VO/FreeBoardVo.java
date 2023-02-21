@@ -5,7 +5,7 @@ import java.sql.Date;
 //조회한 하나의 글정보를 저장할 용도
 //수정할 하나의 글정보를 조회한후 저장할 용도
 //DB에 추가한 새글정보를 임시로 저장할 용도
-public class BoardVo {
+public class FreeBoardVo {
 	private int b_idx;
 	private String b_id,b_nickname,b_title,b_content;
 	private int b_group,b_level;
@@ -14,9 +14,9 @@ public class BoardVo {
 	private String b_file;
 	private int b_like;
 	
-	public BoardVo() {}
+	public FreeBoardVo() {}
 
-	public BoardVo(int b_idx, String b_id, String b_nickname, String b_title, String b_content, int b_group,
+	public FreeBoardVo(int b_idx, String b_id, String b_nickname, String b_title, String b_content, int b_group,
 			int b_level, Date b_date, Date b_update_date, int b_cnt, String b_file, int b_like) {
 		
 		this.b_idx = b_idx;
@@ -33,7 +33,7 @@ public class BoardVo {
 		this.b_like = b_like;
 	}
 
-	public BoardVo(int b_idx, String b_id, String b_nickname, String b_title, String b_content, int b_group,
+	public FreeBoardVo(int b_idx, String b_id, String b_nickname, String b_title, String b_content, int b_group,
 			int b_level, int b_cnt, String b_file, int b_like) {
 		
 		this.b_idx = b_idx;

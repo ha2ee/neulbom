@@ -9,7 +9,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-import VO.BoardVo;
+import VO.FreeBoardVo;
 import VO.FileBoardVo;
 import VO.MemberVo;
 
@@ -261,7 +261,7 @@ public class FileBoardDAO {
 			//조회된 Result의 정보를 한행 단위로 꺼내서
 			//BoardVo객체에 한행씩 저장 후 BoardVo객체들을 ArrayList배열에 하나씩 추가해서 저장
 			while(rs.next()) {
-				BoardVo vo = new BoardVo(rs.getInt("b_idx"),
+				FreeBoardVo vo = new FreeBoardVo(rs.getInt("b_idx"),
 										rs.getString("b_id"),
 										rs.getString("b_pw"),
 										rs.getString("b_name"), 

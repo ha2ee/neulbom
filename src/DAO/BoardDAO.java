@@ -9,7 +9,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-import VO.BoardVo;
+import VO.FreeBoardVo;
 import VO.MemberVo;
 
 public class BoardDAO {
@@ -43,7 +43,7 @@ public class BoardDAO {
 
 	
 	//입력한 새글 정보를 DB에 추가 하는 메소드
-	public int insertBoard(BoardVo vo) {
+	public int insertBoard(FreeBoardVo vo) {
 		int result = 0;
 			
 		try {

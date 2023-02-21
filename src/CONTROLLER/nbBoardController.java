@@ -28,7 +28,7 @@ import org.apache.commons.io.FileUtils;
 
 import DAO.FileBoardDAO;
 import DAO.MemberDAO;
-import VO.BoardVo;
+import VO.FreeBoardVo;
 import VO.FileBoardVo;
 import VO.MemberVo;
 

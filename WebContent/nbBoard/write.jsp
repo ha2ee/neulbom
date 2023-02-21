@@ -1,5 +1,26 @@
+<%@page import="VO.MemberVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<% 
+	request.setCharacterEncoding("UTF-8");
+	String contextPath = request.getContextPath();
+	String nowPage = request.getParameter("nowPage");
+	String nowBlock = request.getParameter("nowBlock");
+	MemberVo vo = (MemberVo)request.getAttribute("membervo");
+	String email = vo.getEmail();
+	String name = vo.getName();
+	String nickname = vo.get
+%>
+
+<%
+	String id = (String)session.getAttribute("id");
+	if(id == null){//로그인 하지 않았을경우
+%>		
+	<script>	
+		alert("로그인 하고 글을 작성하세요!"); 
+		history.back(); 
+ 	</script>
+<% 	}%>
 
 <html>
 <head>

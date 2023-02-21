@@ -103,13 +103,13 @@ public class BoardController extends HttpServlet{
 	         
 	         membervo = memberdao.memberOne(memberid);
 	         
-	         request.setAttribute("center", "board/write.jsp");
+	         request.setAttribute("center", "Freeboard/write.jsp");
 	         request.setAttribute("membervo", membervo);
 	         
 	         request.setAttribute("nowPage", request.getParameter("nowPage"));
 	         request.setAttribute("nowBlock", request.getParameter("nowBlock"));
 	         
-	         nextPage = "/CarMain.jsp";
+	         nextPage = "/nbMain.jsp";
 	         break;
 
 			

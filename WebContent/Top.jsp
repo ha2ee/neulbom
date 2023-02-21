@@ -561,7 +561,7 @@ body{
 				<li><a href="<%=request.getContextPath()%>/nb/edu.do?center=/nbShop/trainer.jsp">수강신청 가기</a></li>
 			</ul>
 			<ul class="list_lnb_03">
-				<li><a href="<%=request.getContextPath()%>/freeboard/list.bo">자유 게시판</a></li>
+				<li><a href="<%=request.getContextPath()%>/freeboard/list.fb">자유 게시판</a></li>
 				<li><a href="<%=request.getContextPath()%>/nb/trainer.bo?center=/nbBoard/trainerboard.jsp">훈련사 상담</a></li>
 				<li><a href="<%=request.getContextPath()%>/nb/review.bo?center=/nbBoard/review.jsp">수강 후기</a></li>
 				<li><a href="<%=request.getContextPath()%>/nb/qna.bo?center=/nbBoard/qna.jsp">Q&A</a></li>

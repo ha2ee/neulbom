@@ -14,12 +14,12 @@ import javax.servlet.http.HttpSession;
 
 import DAO.BoardDAO;
 import DAO.MemberDAO;
-import VO.BoardVo;
+import VO.FreeBoardVo;
 import VO.MemberVo;
 
 
 //게시판 관련 기능 요청이 들어오면 호출되는 사장님(컨트롤러)
-@WebServlet("/board1/*")
+@WebServlet("/freeboard/*")
 public class BoardController extends HttpServlet{
 	
 	//BoardDAO객체를 저장할 참조변수 선언
@@ -83,7 +83,7 @@ public class BoardController extends HttpServlet{
 		//요청한 중앙화면 뷰 주소를 저장할 변수
 		String center = null;
 		//BoardVo객체를 저장할 참조변수 선언
-		BoardVo vo = null;
+		FreeBoardVo vo = null;
 		ArrayList list = null;
 		int count = 0;
 		String key = null;
@@ -123,7 +123,7 @@ public class BoardController extends HttpServlet{
 			String id = request.getParameter("i");
 			
 			//요청한 값을 BoardVo객체의 각 변수에 저장
-			vo = new BoardVo();
+			vo = new FreeBoardVo();
 			vo.setB_name(writer);
 			vo.setB_email(email);
 			vo.setB_title(title);

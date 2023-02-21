@@ -69,14 +69,6 @@ public class BoardController extends HttpServlet{
 		//서블릿으로 요청한 주소를 request에서 얻기
 		String action = request.getPathInfo();//2단계 요청 주소
 		System.out.println("요청한  주소 : "+action);
-		// /write.bo	  		<- 새글 작성 화면 요청!
-		// /writePro.bo 		<- 입력한 새글 정보를 DB에 추가 요청!
-		// /list.bo 		  		<- DB에 저장된 글 목록을 조회 하여 보여주는 요청 주소
-		// /read.bo 	  		<- 게시판에서 제목을 눌러서 글을 수정하려할때 보여주는 요청 주소
-		// /password.bo		<- 게시판에서 제목을 누른 뒤 비밀번호를 입력 받으려 할때 요청 하는 주소
-		// /boardUpdate.bo  <- 게시판 -> 제목 눌리고 -> 비번 입력후 -> 수정 다하고 -> 수정 버튼 눌렀을때 요청
-		// /deleteBoard.bo   <- 게시판 -> 제목 눌리고 -> 비번 입력후 -> 삭제 버튼 눌렀을때 요청 주소
-		// /reply.bo           <- 게시판 -> 제목 눌리고 -> 답변 버튼을 클릭했을때 요청 주소
 		
 		//조건에 따라서 포워딩 또는 보여줄 VIEW주소 경로를 저장할 변수
 		String nextPage = null;
@@ -92,8 +84,37 @@ public class BoardController extends HttpServlet{
 		
 	      switch (action) {
 	      //새글 입력하는 화면 요청!
-//	      case "/write.bo":
-//	         
+	      case "/list.fb":
+	    	  
+//			session = request.getSession();
+//			String loginid = (String)session.getAttribute("id");
+	    	  
+//			String nowPage = request.getParameter("nowPage");
+//			String nowBlock = request.getParameter("nowBlock");
+	    	  
+	    	  
+	    	  
+	    	  //요청한 값을 이용해 응답할 값 마련(글 조회)
+//			list = boarddao.boardListAll();
+//			count = boarddao.getTotalRecord();
+	    	  
+	    	  //list.jsp페이지의 페이징 처리 부분에서
+	    	  //이전 또는 다음 또는 각 페이지 번호를 클릭했을때.. 요청받는 값 얻기
+	    	  
+//			request.setAttribute("list", list);
+//			request.setAttribute("count", count);
+//			request.setAttribute("id", loginid);
+//			request.setAttribute("nowPage", nowPage);
+//			request.setAttribute("nowBlock", nowBlock);
+	    	  
+	    	  request.setAttribute("center", "nbBoard/list.jsp");
+	    	  
+	    	  nextPage = "/nbMain.jsp";
+	    	  break;
+	    	  
+	      case "/write.fb":
+	    	  
+//	    	  String unknown = request.getParameter("gildong");
 //	         //새글을 입력하는 화면에 로그인한 회원의 이름, 아이디, 이메일을 보여주기 위해
 //	         //member테이블에서 SELECT하여 가져와야 합니다.
 //	         HttpSession session = request.getSession();
@@ -103,14 +124,14 @@ public class BoardController extends HttpServlet{
 //	         
 //	         membervo = memberdao.memberOne(memberid);
 //	         
-//	         request.setAttribute("center", "Freeboard/write.jsp");
 //	         request.setAttribute("membervo", membervo);
 //	         
 //	         request.setAttribute("nowPage", request.getParameter("nowPage"));
 //	         request.setAttribute("nowBlock", request.getParameter("nowBlock"));
-//	         
-//	         nextPage = "/nbMain.jsp";
-//	         break;
+//	    	 request.setAttribute("unknown", unknown);
+	    	 request.setAttribute("center", "nbBoard/write.jsp");
+	         nextPage = "/nbMain.jsp";
+	         break;
 //
 //			
 //		case "/writePro.bo":
@@ -147,34 +168,6 @@ public class BoardController extends HttpServlet{
 //			return;
 //		
 		//게시판 모든 글 조회 요청
-		case "/list.fb":
-			
-//			session = request.getSession();
-//			String loginid = (String)session.getAttribute("id");
-			
-//			String nowPage = request.getParameter("nowPage");
-//			String nowBlock = request.getParameter("nowBlock");
-
-			
-			
-			//요청한 값을 이용해 응답할 값 마련(글 조회)
-//			list = boarddao.boardListAll();
-//			count = boarddao.getTotalRecord();
-			
-			//list.jsp페이지의 페이징 처리 부분에서
-			//이전 또는 다음 또는 각 페이지 번호를 클릭했을때.. 요청받는 값 얻기
-			
-//			request.setAttribute("list", list);
-//			request.setAttribute("count", count);
-//			request.setAttribute("id", loginid);
-//			request.setAttribute("nowPage", nowPage);
-//			request.setAttribute("nowBlock", nowBlock);
-			
-			request.setAttribute("center", "nbBoard/list.jsp");
-			
-			nextPage = "/nbMain.jsp";
-			break;
-		
 		// 게시판에서 찾고자 하는 내용을 쓰고 검색했을때
 //		case "/searchlist.bo":
 //			

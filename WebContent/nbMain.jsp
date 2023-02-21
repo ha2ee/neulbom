@@ -13,8 +13,7 @@
  --%>
 <%-- <c:set var="center" value="${param.center}"/> --%>
 <c:set var="center" value="${requestScope.center}"/>
-<c:out value="${center}" />
- 
+<%-- <c:out value="${center}" />       작업하며 주소가 탑을 가려서 top위에서 확인할 수 있도록 위치를 옮겨 뒀습니다.    --%> 
 <%-- 처음으로 CarMain.jsp 메인화면을 요청 했을때... 중앙화면은 Center.jsp로 보이게 설정하자 --%>
  
 <c:if test="${center == null}">
@@ -82,6 +81,7 @@ body{
 
 			<div id = "header">
 			<header>
+			<c:out value="${center}" />
 				<jsp:include page="Top.jsp"/>
 			</header>	
 			</div>

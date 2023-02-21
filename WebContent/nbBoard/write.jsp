@@ -1,84 +1,217 @@
-<%@page import="VO.MemberVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<% 
-	request.setCharacterEncoding("UTF-8");
-	String contextPath = request.getContextPath();
-	String nowPage = request.getParameter("nowPage");
-	String nowBlock = request.getParameter("nowBlock");
-	MemberVo vo = (MemberVo)request.getAttribute("membervo");
-	String email = vo.getEmail();
-	String name = vo.getName();
-	String nickname = vo.getNickname();
-%>
-
-<%
-	String id = (String)session.getAttribute("id");
-	if(id == null){//로그인 하지 않았을경우
-%>		
-	<script>	
-		alert("로그인 하고 글을 작성하세요!"); 
-		history.back(); 
- 	</script>
-<% 	}%>
-
+<!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover,shrink-to-fit=no ">
-	
-	<!-- 부트스트랩 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-	<!-- 클래식 에디터 -->
-	<script src="https://cdn.ckeditor.com/ckeditor5/29.1.0/classic/ckeditor.js"></script>
-	<title>Home</title>
-	
-	<style type="text/css">
-	.btn-outline-primary{
-	float: right;
-	}
-	</style>
-	
-	
-	<!-- 넓이 높이 조절 -->
-	<style>
-	#w_table{
- 	 position: absolute;
- 	 top:50%;
- 	 left: 50%;
- 	 transform: translate(-50% , -50%)
- 	 
- 	 }
-	.ck.ck-editor {
-    	max-width: 500px;
-    	magin : auto;
-	}
-	.ck-editor__editable {
-	    min-height: 300px;
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <style type="text/css">
+  body { 
+  margin : 0px ;
+}
+a{
+  text-decoration : none ;
+  color : black ;
+}
+a:hover{
+  text-decoration : underline ;
+}
+ul,lu {
+  list-style-type : none ;
+  margin : 0px ;
+  padding : 0px ;
+}
+5
+#wrap {
+  width : 860px ;
+}
+header {
+  background: #eeeeee ;
+  padding : 20px ;
+}
+header > img {
+  float : left ;
+  margin-right : 30px ;
+  width : 120px ;
+  height : 110px ;
+}
+header > h1 {
+  padding : 0px ;
+  margin : 0px ;
+}
+.clear {
+  clear : both ;
+}
+.none {
+  display : none ;
+}
 
-	}
-	</style>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-	
+/*게시판*/
+/*외곽잡기*/
+#content_wrap {
+  border : 1px solid red ;
+  padding : 30px ;
+  background : honeydew ;
+  width : 100% ;
+  font-size : 13px ;
+}
+#content_wrap ul {
+  background : #ffffff ;
+  border : 1px solid #dddddd ;
+  padding : 10px ;
+}
+#content_wrap ul li{
+  margin-bottom : 6px ;
+}
+#content_wrap ul li:nth-child(2){
+  margin-bottom : 10px ;
+}
+#content_wrap .title {
+  font-weight : bold ;
+  display : inline-block ;
+  width : 60px ;
+}
+
+/*내부잡기 shift+home+insert */
+#content_wrap li:nth-child(1) div{
+  display : inline-block ;
+}
+#content_wrap li:nth-child(1) .radiobox {
+  font-size : 13px ;
+  margin-left : 50px ;
+}
+/*쓰기영역 */
+.writeWrap {
+  padding : 10px ;
+  margin : 0px ;
+}
+
+.writeWrap  .writeArea {
+  width : 95% ;
+  padding : 5% ;
+  font-size : 12px ;
+  color : #666666 ;
+  
+  min-height : 300px ;
+}
+.configWrap {
+  border : none ;
+}
+.configWrap ul {
+  margin : 0px ;
+  background : #ffffff ;
+  padding : 10px ;
+}
+.configWrap .tag .InputArea input{
+  width: 500px ;
+}
+.end {
+  border-top : 1px solid #dddddd ;
+  background : white ;
+  width : 100%;
+  padding : 10px ;
+  padding-top : 30px ;
+}
+.end a {
+  font-size : 14px ;
+  border : 1px solid gold ;
+  background : khaki ;
+  padding : 3px ;
+  border-radius : 5px ;
+}
+.end a:hover {
+  font-weight : bold ;
+  text-decoration : none ;
+}
+  
+  </style>
 </head>
 <body>
-	<div id="w_table">
-        <input type="text" class="form-control" placeholder="제목을 입력해 주세요" aria-label="Username" aria-describedby="addon-wrapping">
-	    
-	    <div id="classic">
-	        <p></p>
-	    </div>
-	    <button type="button" class="btn btn-outline-primary">등록</button>
-	    <button type="button" class="btn btn-outline-primary">목록</button>
+  <div id="wrap">
+    <header>
+      <img src="https://i.etsystatic.com/14912200/r/il/7c4834/1295206612/il_570xN.1295206612_nj87.jpg">  
+      <h1>css활용강의</h1>
+      <h2>게시판 글쓰기</h2>
+    </header>
+    <div id="content_wrap">
+      <ul class="title_wrap">
+        <li>
+          <span class="title">게시판</span>
+          <div class="board_select">
+            <select value="게시판선택">
+              <option selected disabled>게시판선택</option>
+              <option value="ml">Deep Learning</option>
+              <option value="board">자유게시판</option>
+            </select>
+          </div>
+          <div class="radiobox">
+            <!--
+            <input type="checkBox" id="chkNotice1" name="chkB1">
+            <label for="chkNotice1">공지사항으로 게시글쓰기</label>
+            <input type="checkBox" id="chkNotice2" name="chkB2">
+            <label for="chkNotice2">일반글로 게시글쓰기</label>
+            -->
+            <input type="radio" name="write" id="write_O">
+            <label for="write_O">공지사항으로 게시글쓰기</label>
+            <input type="radio" name="write" id="write_G">
+            <label for="write_G">일반글로 게시글쓰기</label>
+          </div>
+        </li>
+        <li>
+          <span class="title">제목</span>
+          <input type="text" onfocus="value=''" value="게시글 제목을 입력하세요" style="width:500px"/>
+        </li>
+        <li>
+          <span class="title" style="font-size:10px;">동영상삽입</span>
+        </li>
+      </ul>
+      <div class="writeWrap">
+        <textarea class="writeArea" value=""></textarea>
+      </div>
+      <div class="configWrap">
+        <ul>
+          <li class="tag">
+            <span class="title">태그달기</span>
+            <div class="InputArea">
+              <input type="text" id="tagInput" nae="tagInput" onfocus="value=''" value="태그와 태그는 쉼표로 구분하세요">
+            </div>
+          </li>
+          <li>
+            <span class="title">공개설정</span>
+          </li>
+          <li>
+            <span class="title">검색설정</span>
+          </li>
+        </ul>
+      </div>
+      <div class="end">
+        <a href="#">저장하기</a>
+        <a href="#">취소하기</a>
+      </div>
+    
     </div>
-    <script>
-        ClassicEditor
-            .create( document.querySelector( '#classic' ))
-            .catch( error => {
-                console.error( error );
-            } );
-    </script>
-</body>
-</html>
+  </div>
+  </body>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

@@ -11,6 +11,7 @@
 	<title>Home</title>
 	
 	
+	
 	<!-- 넓이 높이 조절 -->
 	<style>
 	#w_table{

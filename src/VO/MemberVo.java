@@ -6,7 +6,7 @@ import java.sql.Date;
 //입력한 회원정보를 DB에 INSERT추가 하기 전 임시로 저장할 변수가 있는 VO클래스
 public class MemberVo {
 	
-	private String id,pass,name, nickname;
+	private String id,pass,name,nickname;
 	private Date reg_date;
 	private int age;
 	private String gender,address,email,tel,hp;
@@ -17,12 +17,13 @@ public class MemberVo {
 	
 	
 	
-	public MemberVo(String id, String pass, String name, 
+	public MemberVo(String id, String pass, String name, String nickname, 
 					int age, String gender, String address, String email,
 					String tel, String hp) {
 		this.id = id;
 		this.pass = pass;
 		this.name = name;
+		this.nickname= nickname;
 		this.age = age;
 		this.gender = gender;
 		this.address = address;
@@ -33,12 +34,13 @@ public class MemberVo {
 
 
 
-	public MemberVo(String id, String pass, String name, 
+	public MemberVo(String id, String pass, String name, String nickname,
 					Date reg_date, int age, String gender, String address,
 					String email, String tel, String hp) {
 		this.id = id;
 		this.pass = pass;
 		this.name = name;
+		this.nickname = nickname;
 		this.reg_date = reg_date;
 		this.age = age;
 		this.gender = gender;
@@ -46,6 +48,18 @@ public class MemberVo {
 		this.email = email;
 		this.tel = tel;
 		this.hp = hp;
+	}
+
+
+
+	public String getNickname() {
+		return nickname;
+	}
+
+
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
 	}
 
 

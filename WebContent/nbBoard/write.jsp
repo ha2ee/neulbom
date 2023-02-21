@@ -9,7 +9,7 @@
 	MemberVo vo = (MemberVo)request.getAttribute("membervo");
 	String email = vo.getEmail();
 	String name = vo.getName();
-	
+	String nickname = vo.getNickname();
 %>
 
 <%

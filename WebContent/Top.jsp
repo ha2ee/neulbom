@@ -13,7 +13,7 @@ $(document).ready(function(){
 		$("#mega-menu").stop().slideDown("fast");
 	})
 	
-	$("#mega-menu").on("mouseleave", function(){
+	$("#mega_wrapper").on("mouseleave", function(){
 		$("#mega-menu").stop().slideUp("slow");
 	})
 
@@ -52,6 +52,7 @@ $(document).ready(function() {
 
   
 .nb_top {
+
   position : fixed;
   width : 100%;
   height : 100px;
@@ -78,7 +79,7 @@ body{
 }
 
 #header, #middle, #footer {
-	width : 1200px;
+	width : 100%;
 	margin : 0 auto 0 auto;
 	text-align: center;
 }
@@ -116,40 +117,44 @@ body{
 /* Slider */
 #textSlider.row {
 
-	position: relative;
+
+	position: fixed;
 	left : 0;
 	right : 0;
 	top : 0;
-	width:100%;
-	height:100%;
+	width : 100%;
+	height:100px;
+	margin : 0 auto 0 auto;
 }
 
 #textSlider div {
 	
+	left : 0px;
 	right : 0;
 	position : relative;
-	width : 100%;
+	width : 1200px;
 	color: black;
 	text-transform: uppercase;
+	margin : 0 auto 0 auto;
 }
 
 
 .scroller {
-/* 	기본값 70pt */
-   height: 70pt;
-/*    기본값 70pt */
-/*    line-height: 70pt; */
-/*    width : 200px; */
+   height: 100px;
    overflow: hidden;
 }
 
 /* scroller 안에 .inner 클래스 안에 p 태그 지정 해서 line-height: 1.0줌 */
 
 .scroller .inner p{
-		padding-top : 7px;
+		
+		padding-top : 7px; 
 		margin : 0 auto 0 auto;
-		line-height: 1;
-		width : 100%;
+		line-height: 0.85;
+		left: -30px;
+		right : 0;
+		top : -5px;
+		height : 100px;
 }
 
 .scroller .inner { 
@@ -176,7 +181,6 @@ body{
 /* 로고 에 대한 CSS 설정 */
 #menu1 {
 
-/* 	border : 1px solid black; */
 	
 	left : 0;
 	right : 0;
@@ -192,7 +196,7 @@ body{
 /*  @ 네브바 + 날씨 API CSS 설정 */
 #menu2 {
 
-/* 	border : 1px solid black; */
+/*   border : 1px solid red; */
 	
 	position : fixed;
 	top : 100px;
@@ -205,7 +209,17 @@ body{
 	right : 0;
 }
 
+/* 네브 박스 CSS  설정 */
+	
+#nav_box {
 
+	height : 100%;
+	width : 100%;
+	position : relative;
+	margin : 0 auto 0 auto;
+	z-index : 5;
+
+}
 /* @ 네브바에 대한 CSS 설정 */
 #main_menu {
 
@@ -223,31 +237,48 @@ body{
 /* 로그인에 대한 CSS 설정 */
 
 #nb_login {
-	position : relative;
+	position : fixed;
 	top : 0;
-	left : 1292px;
+	left : 0;
 	right : 0;
 	height: 100px;
-	width : 250px;
+	width : 100%;
 }
 
-#login_box {
+#nb_box{
+
+	margin : 0 auto 0 auto;
 	text-align: center;
-	height : 100px;
-	width : 100%;	
-	position: absolute;
-	bottom : 85px;
+	height : 100%;
+	width :  1200px;	
+	position: relative;
+	top : 0;
+
+}
+
+
+#login_box {
+		
+		margin : 0 auto 0 auto;
+		position: relative;
+		width : 250px;
+		height : 100px;
+		top : -1px;
+		left : 475px;
+		right : 0;
+		text-align: center;
+		
+
 }
 
 #login_box > li {
 	
 	float : left;
-	left : 25px;
 	position: relative;
-	top : 10px;
 	text-align: center;
-	margin : 0 10px;
-	padding : 3px;
+	margin : 0 auto 0 auto;
+	padding : 10px;
+	left : 20px;
 
 }
 
@@ -255,27 +286,29 @@ body{
 /* 	1) "메뉴"에 대한 CSS 설정 */
 .list_gnb {
 
-	position : fixed;
-	margin : 0;
+/* 	border : 1px solid red; */
+
+	position : relative;
+	margin : 0 auto 0 auto;
 	padding : 0;
 	list-style: none;
-	float : left;
-	width : 100%;
+	width : 1200px;
 	height : 150px;
-	top : 100px
+	top : 0;
+	left : 0;
+	right : 0;
 }
 
 /*  1-1) 메뉴의 정렬에 대한 CSS 설정 */
 .list_gnb>li{
 
-/* 	border : 1px solid red; */
-	
-/* 	margin : 0 0 0 -250px; */
-	position : fixed;
-	top : 100px;
-	left : 360px;
-	right : 360px;
+	position : relative;
+	top : 0;
+	left : 0;
+	right : 0;
+	margin : 0 auto 0 auto;
 	height : 150px;
+	width:1200px;
 }
 
 /* 1-2) 메뉴 버튼이 활성화 되었을때, CSS 디자인 */
@@ -314,21 +347,39 @@ body{
 
 /* 드롭  된 큰 메뉴에 대한 스타일 조정 */
 #mega-menu {
-
+	
  	font-weight : 900;
 	width : 100%;
 	height : 170px;
 	background: white;
-	position : fixed;
-	top : 249px;
+	position : relative;
+	top : 250px;
 	left : 0;
 	right : 0;
 	border-radius: 3px;
 	display : none;
+	
+
+
+}
+
+#mega_wrapper{
+	
+/* 	border : 1px solid red; */
+	
+	left: 0;
+	right : 0;
+	position : relative;
+	top : 0;
+	width : 1200px;
+	height : 100%;
+	margin : 0 auto 0 auto;
+	
+
 }
 
 /* 드롭  된 각 메뉴에 대한 스타일 조정 */
-#mega-menu > ul {
+#mega_wrapper > ul {
 	text-align : center;
 	color : black;
 	font-size : 16px;
@@ -336,11 +387,11 @@ body{
 }
 
 /* 드롭 된 메뉴 전체의 스타일 조정 */
-#mega-menu > ul >li{
+#mega_wrapper > ul >li{
 	padding : 8px;
 	text-align : center;
 }
-#mega-menu > ul >li:hover{
+#mega_wrapper > ul >li:hover{
 	border-radius :20px;
 	background-color : #ffebcd;
 	text-align : center;
@@ -348,7 +399,7 @@ body{
 
 /* 드롭 된 메뉴의 간격 조정 */
 .list_lnb_01 {
- 	margin-left : 490px;  
+ 	margin-left : 140px;  
  		width: 130px;
 }
 .list_lnb_02 {
@@ -365,7 +416,7 @@ body{
 }
 
 /* 드롭 된 메뉴의 스타일 조정 */
-#mega-menu > ul >li > a{
+#mega_wrapper > ul >li > a{
 	font-size : 17px;
  	font-weight : inherit;
 	text-align : center;
@@ -406,15 +457,29 @@ body{
 	background-color : #ffebcd;
 }
 
+	#weather_box{
+	
+		width : 100%;
+		height : 100%;
+		position : relative;
+		text-align: center;
+		margin : 0 auto 0 auto;
+		left : 0;
+		right : 0;
+		top : -150px;
+	}
+
+
    #weather1 {
 	
-/* 	border : 1px solid black; */
+/*  	border : 1px solid red;  */
 	
 	position : relative;
 	text-align : center;
-	height : 150px;
+	height : 100%;
 	width : 250px;
-	left : 466px;
+	left : 475px;
+	margin : 0 auto 0 auto;
 }
 
 .inner p {
@@ -512,18 +577,21 @@ body{
 		</div>
 		<!--                  1) 로그인 & 로그아웃 & 마이페이지 & 장바구니 버튼 -->
 		<div id = "nb_login">
+				<div id = "nb_box">
 					<ul id = "login_box">	                    			
 		               <li><a href="<%=request.getContextPath()%>/nb/login.member?center=/nbMember/login.jsp" class="btn">로그인</a></li>
 		               <li><a href="<%=request.getContextPath()%>/nb/mypage.member?center=/nbMember/mypage.jsp" class="btn">마이페이지</a></li>
 		               <li><a href="<%=request.getContextPath()%>/nb/join.member?center=/nbMember/join.jsp" class="btn">회원가입</a></li>
 		               <li><a href="<%=request.getContextPath()%>/nb/cart.member?center=/nbMember/cart.jsp" class="btn">장바구니</a></li>
 					</ul>
+				</div>	
 			</div>	
 	</div>
 	
 <!--  #   menu2 :  네브바 + 날씨 API  -->		
 
 	<div id="menu2" align="center" >
+	  <div id = "nav_box">
 		<nav id="main_menu">
 			<ul class="list_gnb">
 				<li style="font-family: 'Nanum Gothic', sans-serif;">
@@ -543,15 +611,20 @@ body{
 			  </li>
 			</ul>
 		</nav>
+	</div>
 		<!-- 					2) 날씨 구현 파트 -->
-		<div id = "weather1">
+	   <div id = "weather_box">
+	   
+			<div id = "weather1">
 			                    			
 				<br><br><br>날씨 API 구현 예정
+			</div>
 		</div>	 
 	  </div>
 
 <!--  #   mega-menu :  메가드롭 메뉴  -->
 	<div id="mega-menu">
+		<div id = mega_wrapper>
 			<ul class="list_lnb_01">
 				<li><a href="<%=request.getContextPath()%>/nb/Intro.do?center=/nbCompany/intro.jsp">회사 소개</a></li>
 				<li><a href="<%=request.getContextPath()%>/nb/ci.do?center=/nbCompany/ci.jsp"> C I</a></li>
@@ -569,6 +642,7 @@ body{
 			<ul class="list_lnb_04">
 				<li><a href="<%=request.getContextPath()%>/nb/pet.shop?center=/nbShop/pet.jsp"> 샵으로 이동 </a></li>
 		 </ul>
+		 </div>
 	</div>	
          
  </div>

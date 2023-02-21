@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+request.setCharacterEncoding("utf-8");
+String contextPath = request.getContextPath();
+%>    
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,8 +21,6 @@
 
 
 
-<div class="All-box flex text-white">
-  <div class="w-full">
     <!--요소 시작-->
     <div class="Contents-Box">
       <!--제목-->
@@ -27,7 +30,7 @@
         </div>
         <div class="Sel-And-Del-Btn">
         	<input type="text" >
-          <input class="Del-Btn" type="submit" value="검색" onclick='this.form.action= "#"'>
+          <input class="Del-Btn" type="submit" value="검색">
         </div>
       </form>
       <!--목록-->
@@ -66,47 +69,47 @@
         <!--{{/each}}-->
       </div>
       <!--숫자-->
-      <form class="Form-Box List-Move-Number" method="post">
+      <form class="Form-Box List-Move-Number" method="post" action="<%=contextPath%>/freeboard/write.fb">
         <div class="Number">
           <!--1-->
-          <div class="mave-btn-1" onclick='test({{this}})'>
+          <div class="mave-btn-1">
             <div class="page-text 1-page-text">
               <span id="li{{this}}">
                 <!--{{this}}-->
-                1
+<!--                 1 -->
               </span>
             </div>
           </div>
           <!--2-->
-          <div class="mave-btn-2" onclick='test({{this}})'>
+          <div class="mave-btn-2" >
             <div class="page-text 1-page-text">
               <span id="li{{this}}">
                 <!--{{this}}-->
-                2
+<!--                 2 -->
               </span>
             </div>
           </div>
           <!--3-->
-          <div class="mave-btn-3" onclick='test({{this}})'>
+          <div class="mave-btn-3" >
             <div class="page-text 1-page-text">
               <span id="li{{this}}">
                 <!--{{this}}-->
-                3
+<!--                 3 -->
               </span>
             </div>
           </div>
         </div>
         <!--작성하기 버튼-->
         <div class="Up-Btn">
-          <input type="submit" value="글쓰기" name="submit" />
+        
+   		  	<input type="hidden" name="gildong" value="hong">
+          <input type="submit" value="글쓰기">
         </div>
       </form>
     </div>
-
-  </div>
-</div>
-
-
+ 
+ 
+ 
 
 </body>
 </html>

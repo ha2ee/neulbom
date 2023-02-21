@@ -74,7 +74,6 @@
 </head>
 <body>
 
-test
 <!-- 3) Center 영역 -->
     <!-- slider-start -->
     

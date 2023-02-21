@@ -19,7 +19,6 @@ public class BoardDAO {
 	ResultSet rs;
 	DataSource ds;
 	
-	
 	public BoardDAO() {
 		try {
 			Context ctx = new InitialContext();

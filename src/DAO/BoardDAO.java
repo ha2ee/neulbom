@@ -9,7 +9,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-import VO.BoardVo;
+import VO.FreeBoardVo;
 import VO.MemberVo;
 
 public class BoardDAO {
@@ -18,6 +18,9 @@ public class BoardDAO {
 	PreparedStatement pstmt;
 	ResultSet rs;
 	DataSource ds;
+	
+	
+	
 	
 	public BoardDAO() {
 		try {
@@ -35,9 +38,12 @@ public class BoardDAO {
 		if(pstmt != null)try {pstmt.close();} catch (Exception e) {e.printStackTrace();}
 		if(rs != null)try {rs.close();} catch (Exception e) {e.printStackTrace();}
 	}
+
+	
+
 	
 	//입력한 새글 정보를 DB에 추가 하는 메소드
-	public int insertBoard(BoardVo vo) {
+	public int insertBoard(FreeBoardVo vo) {
 		int result = 0;
 			
 		try {
@@ -45,25 +51,26 @@ public class BoardDAO {
 			con = ds.getConnection();
 			
 			// 1) 새글달기에 대한 규칙 업데이트 하기 (두번째 부터 입력되는 주글들의 pos를 1증가시킨다.
-			String sql = "update board set b_group = b_group + 1";
+			String sql = "update free_board set b_group = b_group + 1";
 			
 			pstmt = con.prepareStatement(sql);
 			pstmt.executeUpdate();
 			
 			// 2) 새글달기에 대한 규칙 업데이트 하기(b_group, b_level 을 0 , 0 으로 인서트)
 			//insert SQL문 만들기
-			sql = "insert into board (b_idx, b_id, b_pw, b_name, "
-							+ "b_email, b_title, b_content, b_group, "
-							+ "b_level, b_date, b_cnt) "
-							+ " values (boarder_b_idx.nextVal, ?,?,?,?,?,?,0,0,sysdate,0)";
-			
+			sql = "insert into free_board (b_idx, b_id, b_nickname, "
+							+ "b_title, b_content, b_group, "
+							+ "b_level, b_date, b_update_date, "
+							+ "b_cnt, b_file, b_like) "
+							+ " values (boarder_b_idx.nextVal, ?,?,?,?,0,0,sysdate,sysdate,0,?,0)";
+																	
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, vo.getB_id());
-			pstmt.setString(2, vo.getB_pw());
-			pstmt.setString(3, vo.getB_name());
-			pstmt.setString(4, vo.getB_email());
-			pstmt.setString(5, vo.getB_title());
-			pstmt.setString(6, vo.getB_content());
+			pstmt.setString(2, vo.getB_nickname());
+			pstmt.setString(3, vo.getB_title());
+			pstmt.setString(4, vo.getB_content());
+			pstmt.setString(5, vo.getB_file());
+	
 			
 			result = pstmt.executeUpdate();
 			
@@ -76,6 +83,10 @@ public class BoardDAO {
 		
 		return result;
 	}
+	
+	
+	/*		
+	
 	
 	//현재 게시판 DB에 저장된 글의 총 수 조회 하는 메소드
 		public int getTotalRecord(String key, String word) {
@@ -501,6 +512,6 @@ public class BoardDAO {
 		
 	
 		
-		
+		*/
 		
 }

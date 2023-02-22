@@ -60,9 +60,9 @@ public class BoardDAO {
 			//insert SQL문 만들기
 			sql = "insert into free_board (b_idx, b_id, b_nickname, "
 							+ "b_title, b_content, b_group, "
-							+ "b_level, b_date, b_update_date, "
+							+ "b_level, b_date, "
 							+ "b_cnt, b_file, b_like) "
-							+ " values (boarder_b_idx.nextVal, ?,?,?,?,0,0,sysdate,sysdate,0,?,0)";
+							+ " values (boarder_b_idx.nextVal, ?,?,?,?,0,0,sysdate,0,?,0)";
 																	
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, vo.getB_id());

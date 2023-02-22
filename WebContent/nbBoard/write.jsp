@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+request.setCharacterEncoding("UTF-8");
+String contextPath = request.getContextPath();
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -142,7 +146,7 @@ header > h1 {
           <input type="text" onfocus="value=''" value="게시글 제목을 입력하세요" style="width:500px"/>
         </li>
         <li>
-          <span class="title" style="font-size:10px;">파일 첨부</span>
+          <span class="title" >파일 첨부</span>
           <input type="file" name="fileName" size="70">
         </li>
       </ul>
@@ -151,8 +155,8 @@ header > h1 {
       </div>
       
       <div class="end" align="center">
-        <a href="#">저장하기</a>
-        <a href="#">취소하기</a>
+        <a href="<%=contextPath%>/freeboard/list.fb">저장하기</a>
+        <a href="<%=contextPath%>/freeboard/list.fb">취소하기</a>
       </div>
     
     </div>

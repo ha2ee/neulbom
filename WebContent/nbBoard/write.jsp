@@ -136,56 +136,21 @@ header > h1 {
     </header>
     <div id="content_wrap">
       <ul class="title_wrap">
-        <li>
-          <span class="title">게시판</span>
-          <div class="board_select">
-            <select value="게시판선택">
-              <option selected disabled>게시판선택</option>
-              <option value="ml">Deep Learning</option>
-              <option value="board">자유게시판</option>
-            </select>
-          </div>
-          <div class="radiobox">
-            <!--
-            <input type="checkBox" id="chkNotice1" name="chkB1">
-            <label for="chkNotice1">공지사항으로 게시글쓰기</label>
-            <input type="checkBox" id="chkNotice2" name="chkB2">
-            <label for="chkNotice2">일반글로 게시글쓰기</label>
-            -->
-            <input type="radio" name="write" id="write_O">
-            <label for="write_O">공지사항으로 게시글쓰기</label>
-            <input type="radio" name="write" id="write_G">
-            <label for="write_G">일반글로 게시글쓰기</label>
-          </div>
-        </li>
+       
         <li>
           <span class="title">제목</span>
           <input type="text" onfocus="value=''" value="게시글 제목을 입력하세요" style="width:500px"/>
         </li>
         <li>
-          <span class="title" style="font-size:10px;">동영상삽입</span>
+          <span class="title" style="font-size:10px;">파일 첨부</span>
+          <input type="file" name="fileName" size="70">
         </li>
       </ul>
       <div class="writeWrap">
         <textarea class="writeArea" value=""></textarea>
       </div>
-      <div class="configWrap">
-        <ul>
-          <li class="tag">
-            <span class="title">태그달기</span>
-            <div class="InputArea">
-              <input type="text" id="tagInput" nae="tagInput" onfocus="value=''" value="태그와 태그는 쉼표로 구분하세요">
-            </div>
-          </li>
-          <li>
-            <span class="title">공개설정</span>
-          </li>
-          <li>
-            <span class="title">검색설정</span>
-          </li>
-        </ul>
-      </div>
-      <div class="end">
+      
+      <div class="end" align="center">
         <a href="#">저장하기</a>
         <a href="#">취소하기</a>
       </div>

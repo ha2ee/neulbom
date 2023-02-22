@@ -4,6 +4,18 @@
 request.setCharacterEncoding("UTF-8");
 String contextPath = request.getContextPath();
 %>
+
+<%
+	String id = (String)session.getAttribute("id");
+	if(id == null){//로그인 하지 않았을경우
+%>		
+	<script>	
+		alert("로그인 하고 글을 작성하세요!"); 
+		history.back(); 
+ 	</script>
+<% 	}%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -153,6 +165,7 @@ header > h1 {
       <div class="writeWrap">
         <textarea class="writeArea" value=""></textarea>
       </div>
+      
       
       <div class="end" align="center">
         <a href="<%=contextPath%>/freeboard/list.fb">저장하기</a>

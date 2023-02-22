@@ -4,40 +4,125 @@
 	request.setCharacterEncoding("utf-8");
 	String contextPath = request.getContextPath();
 %>	
+
 <!DOCTYPE html>
+  <!-- Required meta tags -->
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+   
+   <!-- Optional JavaScript; choose one of the two! -->
+
+    
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    -->
+    <!-- Required meta tags -->
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+   
+   <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    -->
+    
 <html>
 <head>
-<style>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+.form-control{
+/* width:30%; */
+min-width: 30%;
+}
+
+#bigdiv{
+	border: solid 1px black;
+	width:100%;
+	height:700px;
+	position:relative;
+	margin: 0 auto;
+	top:0;
+	left:0;
+	right:0;
+	
+}
+#middlediv{
+	border: solid 1px black;
+	width: 30%;
+	float:left;
+	position:relative;
+	top:0;
+	left:250px;
+	right:0;
+	margin:0 auto;
+
+}
  #map{
  	margin : 0 auto 0 auto;
+ 	width: 30%;
+ 	float:right;
  }
  
  #kmap{
  	padding : 10px 45px;
 
  }
+
+
 </style>
-<meta charset="UTF-8">
-<title>intro.jsp</title>
+
+
 </head>
 <body>
-
-	<!-- 	오시는길이  들어갈 항목 -->
-	 <h1> (주) 늘 봄 </h1>
+ <h1> (주) 늘 봄 </h1>
 	 <br>
-	 <h3>경남 양산시 중부동 686-7 양산역프라자 2층</h3>
-	 <br>
-	 <h4> 대표전화 : 1800-0000</h4>
-	 <br>
-	 <h7>업무시간 ▶ 09:00 ~ 18:00 / 점심시간 12:00 ~ 13:00</h7>
-	 <br>
+	 <h6>경남 양산시 중부동 686-7 양산역프라자 2층</h6>
+	
+	 <h6> 대표전화 : 1800-0000</h6>
+	 
+	 <h6>업무시간 ▶ 09:00 ~ 18:00 / 점심시간 12:00 ~ 13:00</h6>
+	
 	 <h7>(토,일요일,공휴일)은 휴무입니다.</h7>
 	 <br>
-	 <br>
 
+
+<div id="bigdiv">
+	<div id="middlediv" >
+		<h2>무엇이든 물어보세요!</h2>
+		<br>
+		<div id="askname" class="mb-3">
+		  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="이름">
+		</div>
+		<div id="askemail" class="mb-3">
+		  <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="이메일">
+		</div>
+		<div id="askhp" class="mb-3">
+		  <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="전화번호">
+		</div>
+		<div id="askcontent" class="mb-3">
+		  <input type="textarea" class="form-control" id="formGroupExampleInput3" placeholder="메세지를 입력하세요.">
+		</div>
+		<div >
+		 <button type="submit">제출</button>
+		  </div>
+	  </div>
 	 <div id="map" style="width:500px;height:300px;"></div>
-	 
-	 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2c389d4627b346ffd6ecdd0ee427f6f4"></script>
+
+	  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2c389d4627b346ffd6ecdd0ee427f6f4"></script>
      <script>
 		var container = document.getElementById('map');
 		var options = {
@@ -74,8 +159,9 @@
 		
 		
 	 </script>
-	 <br>
-	 <br>
+	  </div>
+  </div>
+
 
 </body>
 </html>

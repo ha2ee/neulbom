@@ -1,167 +1,197 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%
 	request.setCharacterEncoding("utf-8");
 	String contextPath = request.getContextPath();
-%>	
+%>
 
 <!DOCTYPE html>
-  <!-- Required meta tags -->
-   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-   
-   <!-- Optional JavaScript; choose one of the two! -->
+<!-- Required meta tags -->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+	integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+	crossorigin="anonymous">
 
-    
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
+<!-- Optional JavaScript; choose one of the two! -->
+
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
     -->
-    <!-- Required meta tags -->
-   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-   
-   <!-- Optional JavaScript; choose one of the two! -->
+<!-- Required meta tags -->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+	integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+	crossorigin="anonymous">
 
-    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+<!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
+<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+<script
+	src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+	integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+	crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
     -->
-    
+
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
 <style type="text/css">
-.form-control{
-/* width:30%; */
-min-width: 30%;
+.form-control {
+	/* width:30%; */
+	min-width: 30%;
 }
 
-#bigdiv{
-	border: solid 1px black;
-	width:100%;
-	height:700px;
-	position:relative;
+#bigdiv {
+	/* 	border: solid 1px black; */
+	width: 100%;
+	height: 700px;
+	position: relative;
 	margin: 0 auto;
-	top:0;
-	left:0;
-	right:0;
-	
+	top: 0;
+	left: 0;
+	right: 0;
 }
-#middlediv{
-	border: solid 1px black;
+
+#middlediv {
+	/* 	border: solid 1px black; */
 	width: 30%;
-	float:left;
-	position:relative;
-	top:0;
-	left:250px;
-	right:0;
-	margin:0 auto;
-
+	height: 30%;
+	float: left;
+	position: relative;
+	top: 0;
+	left: 250px;
+	right: 0;
+	margin: 0 auto;
 }
- #map{
- 	margin : 0 auto 0 auto;
- 	width: 30%;
- 	float:right;
- }
- 
- #kmap{
- 	padding : 10px 45px;
 
- }
+#company {
+	position: relative;
+	right: 250px;
+}
 
+#map {
+	margin: 0 auto 0 auto;
+	width: 30%;
+	float: right;
+	right: 250px;
+}
 
+#kmap {
+	padding: 10px 45px;
+}
 </style>
 
 
 </head>
-<body>
- <h1> (주) 늘 봄 </h1>
-	 <br>
-	 <h6>경남 양산시 중부동 686-7 양산역프라자 2층</h6>
-	
-	 <h6> 대표전화 : 1800-0000</h6>
-	 
-	 <h6>업무시간 ▶ 09:00 ~ 18:00 / 점심시간 12:00 ~ 13:00</h6>
-	
-	 <h7>(토,일요일,공휴일)은 휴무입니다.</h7>
-	 <br>
+<div>
+	<body>
+		<div id="company">
+			<h1>(주) 늘 봄</h1>
+			<br>
+			<h5>경남 양산시 중부동 686-7 양산역프라자 2층</h5>
 
+			<h5>대표전화 : 1800-0000</h5>
 
-<div id="bigdiv">
-	<div id="middlediv" >
-		<h2>무엇이든 물어보세요!</h2>
-		<br>
-		<div id="askname" class="mb-3">
-		  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="이름">
+			<h5>업무시간 ▶ 09:00 ~ 18:00 / 점심시간 12:00 ~ 13:00</h5>
+
+			<h6>(토,일요일,공휴일)은 휴무입니다.</h6>
+			<br> <br> <br> <br>
+
 		</div>
-		<div id="askemail" class="mb-3">
-		  <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="이메일">
+
+		<div id="bigdiv">
+			<form name="mailform" >
+			<div id="middlediv">
+				<h2>무엇이든 물어보세요!</h2>
+				<br>
+				<div id="askname" class="mb-3" >
+					<input type="text" class="form-control" id="formGroupExampleInput"
+						placeholder="이름" name="name">
+				</div>
+				<div id="askemail" class="mb-3">
+					<input type="text" class="form-control" id="formGroupExampleInput2"
+						placeholder="이메일" name="email">
+				</div>
+				<div id="askhp" class="mb-3">
+					<input type="text" class="form-control" id="formGroupExampleInput3"
+						placeholder="전화번호" name="hp">
+				</div>
+				<div id="askcontent" class="mb-3">
+					<textarea class="form-control" id="exampleFormControlTextarea1"
+						rows="8" placeholder="하고싶은말을 적어주세요." name="text"></textarea>
+				</div>
+
+				<div>
+					<button type="submit" class="btn btn-light">제출</button>
+				</div>
+			</div>
+			</form>
+			<div id="map" style="width: 500px; height: 300px;">
+
+			<script type="text/javascript"
+				src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2c389d4627b346ffd6ecdd0ee427f6f4"></script>
+			<script>
+				var container = document.getElementById('map');
+				var options = {
+					// 지도가 표시될 중심 위치 입니다 위도,경도
+					center : new kakao.maps.LatLng(35.338397270427365,
+							129.0270503412126),
+					level : 2
+				};
+
+				// 지도를 생성합니다
+				var map = new kakao.maps.Map(container, options);
+
+				// 마커가 표시될 위치입니다 위도,경도
+				var markerPosition = new kakao.maps.LatLng(35.33788895330836,
+						129.02753802495232);
+
+				// 마커를 생성합니다
+				var marker = new kakao.maps.Marker({
+					position : markerPosition
+				});
+
+				// 마커가 지도 위에 표시되도록 설정합니다
+				marker.setMap(map);
+
+				var iwContent = '<div id="kmap" style=" padding : 10px 45px; ">(주)늘 봄<br><a href="https://map.kakao.com/link/to/양산직업학교,35.33788895330836,129.02753802495232" style="color:green;" target="_blank">[길 찾기]<br></a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+				iwPosition = new kakao.maps.LatLng(35.33788895330836,
+						129.02753802495232); //인포윈도우 표시 위치입니다
+
+				// 인포윈도우를 생성합니다
+				var infowindow = new kakao.maps.InfoWindow({
+					position : iwPosition,
+					content : iwContent
+				});
+
+				// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+				infowindow.open(map, marker);
+			</script>
 		</div>
-		<div id="askhp" class="mb-3">
-		  <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="전화번호">
-		</div>
-		<div id="askcontent" class="mb-3">
-		  <input type="textarea" class="form-control" id="formGroupExampleInput3" placeholder="메세지를 입력하세요.">
-		</div>
-		<div >
-		 <button type="submit">제출</button>
-		  </div>
-	  </div>
-	 <div id="map" style="width:500px;height:300px;"></div>
-
-	  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2c389d4627b346ffd6ecdd0ee427f6f4"></script>
-     <script>
-		var container = document.getElementById('map');
-		var options = {
-			// 지도가 표시될 중심 위치 입니다 위도,경도
-			center: new kakao.maps.LatLng(35.338397270427365, 129.0270503412126  ),
-			level: 2
-		};
-		
-		// 지도를 생성합니다
-		var map = new kakao.maps.Map(container, options);
-		
-		// 마커가 표시될 위치입니다 위도,경도
-		var markerPosition  = new kakao.maps.LatLng(35.33788895330836, 129.02753802495232 ); 
-
-		// 마커를 생성합니다
-		var marker = new kakao.maps.Marker({
-		    position: markerPosition
-		});
-
-		// 마커가 지도 위에 표시되도록 설정합니다
-		marker.setMap(map);
-		
-		var iwContent = '<div id="kmap" style=" padding : 10px 45px; ">(주)늘 봄<br><a href="https://map.kakao.com/link/to/양산직업학교,35.33788895330836,129.02753802495232" style="color:green;" target="_blank">[길 찾기]<br></a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-	    iwPosition = new kakao.maps.LatLng(35.33788895330836, 129.02753802495232); //인포윈도우 표시 위치입니다
-
-		// 인포윈도우를 생성합니다
-		var infowindow = new kakao.maps.InfoWindow({
-		    position : iwPosition, 
-		    content : iwContent 
-		});
-	  
-		// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
-		infowindow.open(map, marker); 
-		
-		
-	 </script>
-	  </div>
-  </div>
-
+</div>
+</div>
 
 </body>
 </html>

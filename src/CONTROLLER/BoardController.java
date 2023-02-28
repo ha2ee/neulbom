@@ -102,26 +102,6 @@ public class BoardController extends HttpServlet{
 	      //새글 입력하는 화면 요청!
 	      case "/list.fb":
 	    	  
-//			session = request.getSession();
-//			String loginid = (String)session.getAttribute("id");
-	    	  
-//			String nowPage = request.getParameter("nowPage");
-//			String nowBlock = request.getParameter("nowBlock");
-	    	  
-	    	  
-	    	  
-	    	  //요청한 값을 이용해 응답할 값 마련(글 조회)
-//			list = boarddao.boardListAll();
-//			count = boarddao.getTotalRecord();
-	    	  
-	    	  //list.jsp페이지의 페이징 처리 부분에서
-	    	  //이전 또는 다음 또는 각 페이지 번호를 클릭했을때.. 요청받는 값 얻기
-	    	  
-//			request.setAttribute("list", list);
-//			request.setAttribute("count", count);
-//			request.setAttribute("id", loginid);
-//			request.setAttribute("nowPage", nowPage);
-//			request.setAttribute("nowBlock", nowBlock);
 	    		String pageNum = request.getParameter("pageNum");
 	    		int startRow = Integer.parseInt(request.getParameter("startRow"));
 	    		int pageSize = Integer.parseInt(request.getParameter("pageSize"));
@@ -133,12 +113,7 @@ public class BoardController extends HttpServlet{
 	    	  testvo.setCount(count);
 	    	  
         	  request.setAttribute("list", list);
-//        	  request.setAttribute("pageNum", pageNum);
  	    	  request.setAttribute("testvo", testvo);
-//        	  request.setAttribute("pageSize", pageSize);
-//        	  request.setAttribute("count", count);
-//        	  request.setAttribute("currentPage", currentPage);
-
 
 	    	  
         	  request.setAttribute("center", "nbBoard/list.jsp");
@@ -147,29 +122,14 @@ public class BoardController extends HttpServlet{
 	    	  
 	      case "/write.fb":
 	    	  
-//	    	  String unknown = request.getParameter("gildong");
-//	         //새글을 입력하는 화면에 로그인한 회원의 이름, 아이디, 이메일을 보여주기 위해
-//	         //member테이블에서 SELECT하여 가져와야 합니다.
-//	         HttpSession session = request.getSession();
-//	         memberid = (String)session.getAttribute("id");
-//	         
-//	         System.out.println(memberid);
-//	         
-//	         membervo = memberdao.memberOne(memberid);
-//	         
-//	         request.setAttribute("membervo", membervo);
-//	         
-//	         request.setAttribute("nowPage", request.getParameter("nowPage"));
-//	         request.setAttribute("nowBlock", request.getParameter("nowBlock"));
-//	    	 request.setAttribute("unknown", unknown);
 	    	 request.setAttribute("center", "nbBoard/write.jsp");
 	         nextPage = "/nbMain.jsp";
 	         break;
-//
-//			
+	         
+	         
 		case "/writePro.fb":
 //			//요청한 값 얻기
-//
+			
 //			//세션값으로 아이디 + 닉네임을 구할 것입니다.
 			String id = "inseop";
 			String nickname = "seeeop2";
@@ -188,26 +148,10 @@ public class BoardController extends HttpServlet{
 			String fileRealName = multipartRequest.getFilesystemName("file");
 //			//여기까지
 			
-//			int articleNO = 0;//글번호 폴더를 생성하기 위해 글번호를 받아 저장할 변수 
-//			
-//			//폴더에 업로드 후 업로드한 파일 정보들을 받아옵니다.  
-//			Map<String, String> articleMap = upload(request, response);
-//			
-//			String	title = articleMap.get("title"); //작성자 
-//			String	content = articleMap.get("editor1");//글을 작성하는 회원 아이디
-//			String fileName = articleMap.get("fileName");//글을 작성할때 업로드하기위해
-//														 //첨부한 파일명 
-//			
-			
-			
-////			
-//			if(fileName == null || fileName.length() == 0) {
-//				fileName = "파일없음";
-//			}
 
 			vo= new FreeBoardVo(id, nickname, title, content, fileName);
 			int result = boarddao.insertBoard(vo);
-//			
+			
 			if(result ==1) {
 				out.println("<script>");
 				out.println("alert('작성 성공!')");
@@ -221,23 +165,16 @@ public class BoardController extends HttpServlet{
 	         
 	         break;
 			
-//		// 게시판에서 제목을 클릭해서 내용을 보려고 할때
+	         
+		// 게시판에서 제목을 클릭해서 내용을 보려고 할때
 		case "/read.fb":	
-			System.out.println("여기까지 오니?");
-//			
+			
 //			//요청한 값 얻기
 			int b_idx = Integer.parseInt( request.getParameter("b_idx") );
 			System.out.println(b_idx);
-//			nowPage = request.getParameter("nowPage");
-//			nowBlock = request.getParameter("nowBlock");
-//			
-//			// 요청한 값 출력해보기
-//			System.out.println(nowPage);
-//			System.out.println(nowBlock);
-//			
 //			//글 번호 (b_idx)를 이용해 수정 또는 삭제를 위해 DB로 부터 조회하기
 			vo = boarddao.boardRead(b_idx);
-//			
+			
 //			// 중앙화면에 read.jsp로 전달하기 위해 setAttribute로 담음
 //			// 페이지번호, 페이지블럭번호, 글번호 3가지
 //			request.setAttribute("nowPage", nowPage);
@@ -249,7 +186,7 @@ public class BoardController extends HttpServlet{
 
 	        nextPage = "/nbMain.jsp";
 			break;
-//			
+			
 //			//요청한 값을 BoardVo객체의 각 변수에 저장
 //			vo = new FreeBoardVo();
 //			vo.setB_name(writer);

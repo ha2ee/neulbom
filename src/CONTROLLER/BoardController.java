@@ -27,6 +27,7 @@ import DAO.BoardDAO;
 import DAO.FreeBoardDAO;
 import DAO.MemberDAO;
 import VO.FreeBoardVo;
+import VO.LikeVo;
 import VO.MemberVo;
 import VO.test0000;
 
@@ -169,20 +170,22 @@ public class BoardController extends HttpServlet{
 		// 게시판에서 제목을 클릭해서 내용을 보려고 할때
 		case "/read.fb":	
 			
-//			//요청한 값 얻기
 			int b_idx = Integer.parseInt( request.getParameter("b_idx") );
-			System.out.println(b_idx);
-//			//글 번호 (b_idx)를 이용해 수정 또는 삭제를 위해 DB로 부터 조회하기
-			vo = boarddao.boardRead(b_idx);
+			String id2 = request.getParameter("my_id");
+			System.out.println(id2);
 			
-//			// 중앙화면에 read.jsp로 전달하기 위해 setAttribute로 담음
-//			// 페이지번호, 페이지블럭번호, 글번호 3가지
-//			request.setAttribute("nowPage", nowPage);
-//			request.setAttribute("nowBlock", nowBlock);
-//			request.setAttribute("b_idx", b_idx);
+			vo = boarddao.boardRead(b_idx);
+//			좋아요를 누른 상태인지 확인하자.
+//			LikeVo vo2 =boarddao.checkLike(id2,b_idx);
 //			
 			request.setAttribute("vo", vo);
+			int likeCount = vo.getB_like();
+			//좋아요 테이블에 좋아요 누른 것이 있는지 확인하는 브이오
+//			request.setAttribute("vo2", vo2);
+			
+			request.setAttribute("id2", id2);
 			request.setAttribute("center", "nbBoard/read.jsp");
+			request.setAttribute("likeCount", likeCount);
 
 	        nextPage = "/nbMain.jsp";
 			break;
@@ -213,6 +216,30 @@ public class BoardController extends HttpServlet{
 //		
 		//게시판 모든 글 조회 요청
 		// 게시판에서 찾고자 하는 내용을 쓰고 검색했을때
+			
+		case "/like.fb":
+			
+			int b_idx2 = Integer.parseInt(   request.getParameter("b_idx")   );
+ 			String id3 = request.getParameter("id2");
+			LikeVo vo3 = boarddao.checkLike(id3,b_idx2);
+			if(vo3 == null) {
+			int result2  =	boarddao.insertLikeBoard(b_idx2,id3);
+				if(result2 == 1) {
+					System.out.println("like투입성공");
+					
+					out.print(1);
+				} else {
+					System.out.println("like투입실패");
+				}
+			} else {
+				System.out.println("이미 있네요...");
+				
+			}
+ 			
+			
+			return;
+			
+			
 		case "/searchlist.fb":
 			
 //			//요청한 값 얻기 (검색을 위해 선택한 option의 값 하나, 입력한 검색어)

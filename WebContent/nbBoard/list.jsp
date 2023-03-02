@@ -210,6 +210,8 @@
    
     <form name="frmRead">
        <input type="hidden" name="b_idx">
+       <input type="hidden" name="my_id" value="inseop">
+       
     </form>
    
    

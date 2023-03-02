@@ -9,8 +9,10 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import VO.BoardVo;
 import VO.FileBoardVo;
 import VO.FreeBoardVo;
+import VO.LikeVo;
 
 
 public class FreeBoardDAO {
@@ -258,6 +260,94 @@ public ArrayList boardList(String key,String word) {
 		
 		return list;
 	}
+
+public LikeVo checkLike(String sessionId, int b_idx) {
+	LikeVo vo = null;
+	try {
+		con = ds.getConnection();
+
+		String sql = "SELECT * FROM LIKE_TABLE WHERE FREEBOARD_B_ID= ? AND FREEBOARD_B_IDX = ? ";
+		pstmt = con.prepareStatement(sql);
+		pstmt.setString(1, sessionId);
+		pstmt.setInt(2, b_idx);
+		
+		rs = pstmt.executeQuery();
+
+		if(rs.next()) {
+			vo = new LikeVo(rs.getInt("like_number"),
+						   rs.getString("freeBoard_b_id"),
+						   rs.getInt("freeBoard_b_idx"),
+						   rs.getInt("like_check")
+						   );
+		}
+	
+		
+	} catch (Exception e) {
+		System.out.println("checkLike 메소드에서 에러가 발생하였습니다. 이유는 ? --> " +e);
+		e.printStackTrace();
+	} finally {
+		closeResource();
+	}
+	
+	return vo;
+}
+
+public int insertLikeBoard(int b_idx2, String id3) {
+	int result = 0;
+	
+	try {
+		con = ds.getConnection();
+
+		String sql = "INSERT INTO LIKE_TABLE VALUES(LIKE_BOARD_SEQ.NEXTVAL,?,?,1)";
+		pstmt = con.prepareStatement(sql);
+		pstmt.setString(1, id3);
+		pstmt.setInt(2, b_idx2);
+		
+		pstmt.executeUpdate();
+		
+		sql = "UPDATE FREE_BOARD SET B_LIKE = B_LIKE + 1 WHERE B_IDX=?";
+		pstmt = con.prepareStatement(sql);
+		pstmt.setInt(1, b_idx2);
+		
+		result = pstmt.executeUpdate();
+		
+	} catch (Exception e) {
+		System.out.println("checkLike 메소드에서 에러가 발생하였습니다. 이유는 ? --> " +e);
+		e.printStackTrace();
+	} finally {
+		closeResource();
+	}
+	
+	return result;
+}
+
+public int getOnlyLikeCount(int b_idx2) {
+	int result = 0;
+	FreeBoardVo vo =null;
+	try {
+		con = ds.getConnection();
+
+		String sql = "SELECT B_LIKE FROM B_IDX=?";
+		pstmt = con.prepareStatement(sql);
+		pstmt.setInt(1, b_idx2);
+		
+		rs = pstmt.executeQuery();
+		
+		if(rs.next()) {
+			vo = new FreeBoardVo();
+			vo.setB_like(rs.getInt("b_like"));
+		}
+		result = vo.getB_like();
+		
+	} catch (Exception e) {
+		System.out.println("checkLike 메소드에서 에러가 발생하였습니다. 이유는 ? --> " +e);
+		e.printStackTrace();
+	} finally {
+		closeResource();
+	}
+	return result;
+}
+
 	
 	
 	

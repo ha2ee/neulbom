@@ -45,6 +45,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://kit.fontawesome.com/d158a8723c.js" crossorigin="anonymous"></script>
 </head>
 <body>
 	
@@ -58,7 +59,7 @@
 			</div>
 			<div style="border: 1px solid black; text-align: center; height: 30px;" >
 				<div style="border: 1px solid black; float: left;  margin: 3px;">
-					<%=nickname %>     l
+					<%=nickname %>     l 
 				</div>
 				<div style="border: 1px solid black; float: left;  margin: 3px;">
 					<%=date %>
@@ -105,11 +106,16 @@
 			<div>
 			<!-- 눌렀을 때 likeboard안에 likecheck가 되어있는지 아닌지 확인  -->
   				<input type="hidden" id="like_check" <%-- value="<%=vo2.getLike_check()%> --%>" > 
-				<input type="button" id = "likeimgg">
+<!-- 				<input type="button" id = "likeimgg">
 					<img class="rounded-circle likeimg" id="likeimg" src="../images/좋아요.png"
 					width="60px" height="60px"> 
 				</input>	
-					
+ -->					<a href="" id="likeimgg">
+ 		<%
+ 							if()
+ 		%>						
+ 							<i class="fa-regular fa-heart fa-2x"  id="likeimggg" ></i>
+						</a>
 				<p id="countLike"><%=like%></p>
 				
 			</div>
@@ -136,13 +142,14 @@
 
 	    
  --%>	    
-	    $("#likeimgg").on("click", function () {
+	    $("#likeimgg").on("click", function (event) {
+	    	event.preventDefault();
 			let pLike = $("#countLike");
 	    	let like_count = <%=like%>;
 /*  			let likeval = document.getElementById('like_check').value;	//0이면 like X 1이면 like O
  */ 			let b_idx = <%=idx%>;
  			let id2 = "<%=id2%>";
- 			let likeimg = document.getElementById("likeimg");
+ 			let likeimg = document.getElementById("likeimgg");
  			console.log(like_count);
  			
 	/* 		console.log(likeval);
@@ -164,10 +171,10 @@
 		    	  
 		    	  console.log(data);
  		          if (data == 1) {
-		              $("#likeimg").attr("src", "../images/좋아요이후.png");
+		              $("#likeimggg").attr("class", "fa-solid fa-heart fa-2x");
 		              pLike.text(like_count+1);
-		          } else {
-		              $("#likeimg").attr("src", "../images/좋아요.png");
+		          } else if(data == 2){
+		        	  $("#likeimggg").attr("class","fa-regular fa-heart fa-2x")
 		          }
 		      }/* , error: function () {
 		          $("#likeimg").attr("src", "../images/좋아요이후.png");

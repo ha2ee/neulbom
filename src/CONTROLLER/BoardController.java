@@ -233,7 +233,7 @@ public class BoardController extends HttpServlet{
 				}
 			} else {
 				System.out.println("이미 있네요...");
-				
+				out.print(2);
 			}
  			
 			

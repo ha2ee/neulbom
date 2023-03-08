@@ -37,17 +37,21 @@ public class MemberVo {
 	private String mem_address2;
 	private String mem_address3;
 	private String mem_address4;
+	private String mem_address5;
+	
 	
 	//트레이너 주소 테이블
 	private String tr_address1;
 	private String tr_address2;
 	private String tr_address3;
 	private String tr_address4;
+	private String tr_address5;
+	
 	
 	
 	public MemberVo(String mem_id, String mem_name, String mem_nick, String mem_pw, String mem_email, String mem_hp,
 			String mem_birth, String mem_gender, Date mem_joindate, String mem_pet, String mem_address1,
-			String mem_address2, String mem_address3, String mem_address4) {
+			String mem_address2, String mem_address3, String mem_address4, String mem_address5) {
 		super();
 		this.mem_id = mem_id;
 		this.mem_name = mem_name;
@@ -63,11 +67,12 @@ public class MemberVo {
 		this.mem_address2 = mem_address2;
 		this.mem_address3 = mem_address3;
 		this.mem_address4 = mem_address4;
+		this.mem_address4 = mem_address5;
 	}
 	
 	public MemberVo(String mem_id, String mem_name, String mem_nick, String mem_pw, String mem_email, String mem_hp,
 			String mem_birth, String mem_gender, String mem_pet, String mem_address1,
-			String mem_address2, String mem_address3, String mem_address4) {
+			String mem_address2, String mem_address3, String mem_address4, String mem_address5) {
 		super();
 		this.mem_id = mem_id;
 		this.mem_name = mem_name;
@@ -82,12 +87,13 @@ public class MemberVo {
 		this.mem_address2 = mem_address2;
 		this.mem_address3 = mem_address3;
 		this.mem_address4 = mem_address4;
+		this.mem_address4 = mem_address5;
 
 	}
 
 	public MemberVo(String tr_id, String tr_name, String tr_nick, String tr_pw, String tr_email, String tr_hp,
 			String tr_birth, String tr_gender, Date tr_joindate, String tr_address1, String tr_address2,
-			String tr_address3, String tr_address4) {
+			String tr_address3, String tr_address4, String tr_address5) {
 		super();
 		this.tr_id = tr_id;
 		this.tr_name = tr_name;
@@ -102,11 +108,12 @@ public class MemberVo {
 		this.tr_address2 = tr_address2;
 		this.tr_address3 = tr_address3;
 		this.tr_address4 = tr_address4;
+		this.tr_address4 = tr_address5;
 	}
 	
 	public MemberVo(String tr_id, String tr_name, String tr_nick, String tr_pw, String tr_email, String tr_hp,
 			String tr_birth, String tr_gender, String tr_address1, String tr_address2,
-			String tr_address3, String tr_address4) {
+			String tr_address3, String tr_address4, String tr_address5) {
 		super();
 		this.tr_id = tr_id;
 		this.tr_name = tr_name;
@@ -120,6 +127,7 @@ public class MemberVo {
 		this.tr_address2 = tr_address2;
 		this.tr_address3 = tr_address3;
 		this.tr_address4 = tr_address4;
+		this.tr_address4 = tr_address5;
 	}
 
 	public String getMem_id() {
@@ -305,7 +313,13 @@ public class MemberVo {
 	public void setMem_address4(String mem_address4) {
 		this.mem_address4 = mem_address4;
 	}
+	public String getMem_address5() {
+		return mem_address5;
+	}
 
+	public void setMem_address5(String mem_address5) {
+		this.mem_address5 = mem_address5;
+	}
 
 	public String getTr_address1() {
 		return tr_address1;
@@ -337,6 +351,13 @@ public class MemberVo {
 
 	public void setTr_address4(String tr_address4) {
 		this.tr_address4 = tr_address4;
+	}
+	public String getTr_address5() {
+		return tr_address5;
+	}
+
+	public void setTr_address5(String tr_address5) {
+		this.tr_address5 = tr_address5;
 	}
 
 	

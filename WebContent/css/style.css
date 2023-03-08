@@ -522,10 +522,11 @@ img { width: auto; max-width: 100%; height: auto; margin: 0; padding: 0; border:
     }
 .footer p:last-child {line-height: 1.6;}   
 .footer-line{ border-bottom: #232527 1px solid; margin-bottom: 30px; margin-top: 50px; }
-.footer-social a span:hover{background-color: #2658c7; color:#fff;}
-.footer-social a span.active {background-color: #2658c7; color:#fff;}
+.footer-social a span:hover{background-color: #FFB2D9; color:#fff;}
+.footer-social a span.active {background-color: #FFB2D9; color:#fff;}
 .footer-link { color: #ffe451; font-size: 16px; font-weight: 600; border-bottom: 1px solid #ffe451; padding-bottom: 2px; }
 .footer-link:hover { color: #f7da3d; border-bottom: 1px solid #f7da3d; }
+
 
 /*-------------- tiny footer ------------*/
 

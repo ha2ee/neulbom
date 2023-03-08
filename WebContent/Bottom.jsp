@@ -44,7 +44,7 @@
                                 <li><i class="fa fa-envelope"></i>admin@nb.co.kr</li>
                             </ul>
                         </div>
-                        <a style="border-radius: 20px; background:black;"href="#" class="btn btn-primary btn-sm">1:1 상담하기<br></a></div>
+                        <a style="border-radius: 20px; border:0; background:#FFB2D9; "href="#" class="btn btn-primary btn-sm">1:1 상담하기<br></a></div>
                 </div>
                 <!-- footer-contactinfo-close -->
                 <!-- footer-about-start -->
@@ -64,12 +64,10 @@
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <div class="footer-social">
-                        <a href="#"><span><i class="fa fa-facebook"></i></span></a>
-                        <a href="#"><span><i class="fa fa-google-plus"></i></span> </a>
+                        <a href="#"><span class="active"><i class="fa fa-facebook"></i></span></a>
+                        <a href="#"><span class="active"><i class="fa fa-google-plus"></i></span> </a>
                         <a href="#"><span class="active"><i class="fa fa-twitter"></i> </span></a>
-                        <a href="#"><span><i class="fa fa-instagram"></i></span> </a>
-                        <a href="#"><span><i class=" fa fa-pinterest"></i> </span></a>
-                        <a href="#"><span><i class="fa fa-linkedin"></i></span></a> </div>
+                        <a href="#"><span class="active"><i class="fa fa-instagram"></i></span> </a>
                 </div>
             </div>
         </div>

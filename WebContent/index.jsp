@@ -12,7 +12,7 @@
 
 * {
 	font-family: 'Nanum Gothic', sans-serif;
-}
+	}
 
 </style>
 <!--          			# 부트스트랩 플러그인  관련 -->
@@ -30,20 +30,19 @@
 <title>인덱스 요청페이지</title>
 </head>
 <body>
-<!--          			# 부트스트랩 플러그인  관련 -->
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="<%=request.getContextPath()%>/js/jquery.min.js" type="text/javascript"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="<%=request.getContextPath()%>/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="<%=request.getContextPath()%>/js/menumaker.js" type="text/javascript"></script>
-    <script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery.sticky.js"></script>
-    <script type="text/javascript" src="<%=request.getContextPath()%>/js/sticky-header.js"></script>
-    <script type="text/javascript" src="<%=request.getContextPath()%>/js/owl.carousel.min.js"></script>
-    <script type="text/javascript" src="<%=request.getContextPath()%>/js/slider.js"></script>
+<!-- # 부트스트랩 플러그인  관련 -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="<%=request.getContextPath()%>/js/jquery.min.js" type="text/javascript"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="<%=request.getContextPath()%>/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="<%=request.getContextPath()%>/js/menumaker.js" type="text/javascript"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery.sticky.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/sticky-header.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/slider.js"></script>
     
-<!--     인덱스 파일을 실행 했을때, 인덱스 화면으로 사용 될 main.js파일 -->
-    <script src="js/main.js"></script>
+<!-- 인덱스 파일을 실행 했을때, 인덱스 화면으로 사용 될 main.js파일 -->
+<script src="js/main.js"></script>
 
 </body>
 </html>

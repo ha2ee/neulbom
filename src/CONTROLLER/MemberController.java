@@ -254,9 +254,10 @@ public class MemberController extends HttpServlet{
 			String tr_address2 = request.getParameter("address2");
 			String tr_address3 = request.getParameter("address3");
 			String tr_address4 = request.getParameter("address4");
+			String tr_address5 = request.getParameter("address5");
 			String tr_pet = request.getParameter("pet");
 			
-			MemberVo tr_vo = new MemberVo(tr_id, tr_name, tr_nick, tr_pw, tr_email, tr_hp, tr_birth, tr_gender, tr_address1, tr_address2, tr_address3, tr_address4);
+			MemberVo tr_vo = new MemberVo(tr_id, tr_name, tr_nick, tr_pw, tr_email, tr_hp, tr_birth, tr_gender, tr_address1, tr_address2, tr_address3, tr_address4, tr_address5);
 					
 			memberdao.insertTrMember(tr_vo);
 			memberdao.insertTrMemAddress(tr_vo);
